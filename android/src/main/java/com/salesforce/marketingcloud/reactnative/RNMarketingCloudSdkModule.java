@@ -33,14 +33,14 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.salesforce.marketingcloud.MCLogListener;
 import com.salesforce.marketingcloud.MarketingCloudSdk;
 import com.salesforce.marketingcloud.events.EventManager;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nonnull;
 
@@ -207,7 +207,7 @@ public class RNMarketingCloudSdkModule extends ReactContextBaseJavaModule {
             void execute(MarketingCloudSdk sdk) {
                 try {
                     log("~#RNMCSdkModule", "SDK State: " + sdk.getSdkState().toString(2));
-                } catch(Exception e) {
+                } catch (Exception e) {
                     // NO-OP
                 }
             }
@@ -230,9 +230,10 @@ public class RNMarketingCloudSdkModule extends ReactContextBaseJavaModule {
             @Override
             void execute(MarketingCloudSdk sdk) {
                 try {
-                    sdk.getEventManager().track(EventManager.customEvent(name, attributes.toHashMap()));
+                    sdk.getEventManager().track(
+                        EventManager.customEvent(name, attributes.toHashMap()));
                     log("~#RNMCSdkModule", name + " Event Tracked.");
-                } catch(Exception e) {
+                } catch (Exception e) {
                     log("~#RNMCSdkModule", "Error Tracking Event: " + e.getMessage());
                 }
             }
