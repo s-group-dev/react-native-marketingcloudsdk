@@ -36,9 +36,11 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
+import com.google.firebase.messaging.RemoteMessage;
 import com.salesforce.marketingcloud.MCLogListener;
 import com.salesforce.marketingcloud.MarketingCloudSdk;
 import com.salesforce.marketingcloud.events.EventManager;
+import com.salesforce.marketingcloud.messages.push.PushMessageManager;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -238,6 +240,11 @@ public class RNMarketingCloudSdkModule extends ReactContextBaseJavaModule {
                 }
             }
         });
+    }
+
+    @ReactMethod
+    public boolean isMarketingCloudPush(final RemoteMessage message) {
+        return PushMessageManager.isMarketingCloudPush(message);
     }
 
     private void handleAction(final Action action) {
