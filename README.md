@@ -134,7 +134,6 @@ Follow [these instructions](./ios_push.md) to enable push for iOS.
     * [.disableVerboseLogging()](#MCReactModule.disableVerboseLogging)
     * [.logSdkState()](#MCReactModule.logSdkState)
     * [.track()](#MCReactModule.track)
-    * [.isMarketingCloudPush()](#MCReactModule.isMarketingCloudPush)
 
 <a name="MCReactModule.isPushEnabled"></a>
 
@@ -350,13 +349,6 @@ the SDK and will be requested by the Marketing Cloud support team.
 
 ### MCReactModule.track()
 This method helps to track events, which could result in actions such as an InApp Message
-being displayed.
-
-**Kind**: static method of [<code>MCReactModule</code>](#MCReactModule)  
-<a name="MCReactModule.isMarketingCloudPush"></a>
-
-### MCReactModule.isMarketingCloudPush()
-Returns true if remote message is sent from marketingcloud
 being displayed.
 
 **Kind**: static method of [<code>MCReactModule</code>](#MCReactModule)  
