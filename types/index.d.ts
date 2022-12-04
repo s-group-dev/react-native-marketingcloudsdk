@@ -154,8 +154,4 @@ declare class MCReactModule {
    * This method helps to track events, which could result in actions such as an InApp Message being displayed.
    */
   static track(name: any, attributes: any): void;
-  /**
-   * This method helps to track events, which could result in actions such as an InApp Message being displayed.
-   */
-  static isMarketingCloudPush(remoteMessage: any): boolean | null;
 }
